@@ -19,7 +19,7 @@ class LogController extends Controller
             ->whereExists(function ($query) {
                 $query->select(DB::raw(1))
                     ->from('logs')
-                    ->whereRaw('Products.id = Logs.product_id and Logs.user_id = 2');
+                    ->whereRaw('Logs.user_id = 2');
             })
             ->get();
         $result = [
